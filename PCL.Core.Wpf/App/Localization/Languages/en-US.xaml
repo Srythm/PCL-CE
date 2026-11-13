@@ -1047,6 +1047,12 @@
     <sys:String x:Key="Instance.Overall.Info.LoadModpackInfoTask">Loading modpack info</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Loading">Loading information...</sys:String>
     <sys:String x:Key="Instance.Overall.Info.ModpackVersion">Modpack version</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.DaysHours">{0} d {1} h</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.HoursMinutes">{0} h {1} min</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.LessThanMinute">Less than 1 min</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Minutes">{0} min</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Never">Never played</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Title">Time played</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Title">Properties</sys:String>
 
     <!-- Instance.Overall.Manage -->

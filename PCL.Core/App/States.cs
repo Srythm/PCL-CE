@@ -330,6 +330,12 @@ public static partial class States
     [ConfigGroup("Instance", ConfigSource.GameInstance)] partial class InstanceStatesGroup
     {
         [ConfigItem<int>("VersionLaunchCount", 0)] public partial ArgConfig<int> LaunchCount { get; }
+
+        /// <summary>
+        ///     实例累计游玩时长（秒）。
+        /// </summary>
+        [ConfigItem<int>("PlayTimeSeconds", 0)] public partial ArgConfig<int> PlayTimeSeconds { get; }
+
         [ConfigItem<bool>("IsStar", false)] public partial ArgConfig<bool> Starred { get; }
         [ConfigItem<int>("DisplayType", 0)] public partial ArgConfig<int> CardType { get; }
         [ConfigItem<string>("Logo", "")] public partial ArgConfig<string> LogoPath { get; }

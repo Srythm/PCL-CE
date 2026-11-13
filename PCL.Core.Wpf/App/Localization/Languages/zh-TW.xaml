@@ -1008,6 +1008,12 @@
     <sys:String x:Key="Instance.Overall.Info.LoadModpackInfoTask">取得可能的模組包資訊</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Loading">正在取得資訊</sys:String>
     <sys:String x:Key="Instance.Overall.Info.ModpackVersion">模組包版本</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.DaysHours">{0} 天 {1} 小時</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.HoursMinutes">{0} 小時 {1} 分鐘</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.LessThanMinute">不足 1 分鐘</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Minutes">{0} 分鐘</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Never">尚未遊玩</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Title">遊玩時長</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Title">實例資訊</sys:String>
 
     <!-- Instance.Overall.Manage -->

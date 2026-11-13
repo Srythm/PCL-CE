@@ -1047,6 +1047,12 @@
     <sys:String x:Key="Instance.Overall.Info.LoadModpackInfoTask">获取可能的整合包信息</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Loading">正在获取信息</sys:String>
     <sys:String x:Key="Instance.Overall.Info.ModpackVersion">整合包版本</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.DaysHours">{0} 天 {1} 小时</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.HoursMinutes">{0} 小时 {1} 分钟</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.LessThanMinute">不足 1 分钟</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Minutes">{0} 分钟</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Never">尚未游玩</sys:String>
+    <sys:String x:Key="Instance.Overall.Info.PlayTime.Title">游玩时长</sys:String>
     <sys:String x:Key="Instance.Overall.Info.Title">实例信息</sys:String>
 
     <!-- Instance.Overall.Manage -->

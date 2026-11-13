@@ -87,6 +87,8 @@ public static partial class GameWatcher
             gameProcess.OutputDataReceived += LogReceived;
             gameProcess.ErrorDataReceived += LogReceived;
 
+            InstancePlayTime.Begin(version.PathInstance);
+
             LauncherCommon.RunInNewThread(
                 () => _MonitorLoop(loader),
                 "Minecraft Watcher PID " + _pid);
@@ -101,6 +103,9 @@ public static partial class GameWatcher
                     return;
                 field = value;
                 WatcherStateChanged();
+                // 进程结束、崩溃或被取消时结算本次游玩时长。
+                if (value is MinecraftState.Ended or MinecraftState.Crashed or MinecraftState.Canceled)
+                    InstancePlayTime.End(version.PathInstance);
             }
         } = MinecraftState.Loading;
 

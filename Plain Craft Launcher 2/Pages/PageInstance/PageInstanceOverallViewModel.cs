@@ -57,6 +57,10 @@ public partial class PageInstanceOverallViewModel : ViewModelBase
             : new InstanceInfoRow(Lang.Text("Instance.Overall.Info.LaunchCount.Title"),
                 Lang.Text("Instance.Overall.Info.LaunchCount.Count", launchCount),
                 "pack://application:,,,/images/Blocks/RedstoneLampOn.png"));
+        rows.Add(new InstanceInfoRow(
+            Lang.Text("Instance.Overall.Info.PlayTime.Title"),
+            InstancePlayTime.Format(InstancePlayTime.GetTotalSeconds(instance.PathInstance)),
+            "pack://application:,,,/images/Blocks/GoldBlock.png"));
         if (!string.IsNullOrWhiteSpace(States.Instance.ModpackVersion[instance.PathInstance]))
             rows.Add(new InstanceInfoRow(Lang.Text("Instance.Overall.Info.ModpackVersion"),
                 States.Instance.ModpackVersion[instance.PathInstance],
