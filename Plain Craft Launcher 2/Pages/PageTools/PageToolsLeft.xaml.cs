@@ -14,9 +14,22 @@ public partial class PageToolsLeft : IPageView
     public PageToolsLeft()
     {
         InitializeComponent();
+        ApplyLobbyAvailability();
         AnimatedControl = PanItem;
         Loaded += PageLinkLeft_Loaded;
         Unloaded += PageOtherLeft_Unloaded;
+    }
+
+    /// <summary>
+    ///     未配置大厅服务器地址时隐藏联机入口。
+    ///     该地址由编译期注入的密钥提供，缺失时进入该页面只会报错，故不展示入口。
+    /// </summary>
+    private void ApplyLobbyAvailability()
+    {
+        if (PageToolsLeftViewModel.IsLobbyAvailable) return;
+        TextGameLinkCategory.Visibility = Visibility.Collapsed;
+        ItemGameLink.Visibility = Visibility.Collapsed;
+        ItemGameLink.IsEnabled = false;
     }
 
     private void PageLinkLeft_Loaded(object sender, RoutedEventArgs e)
