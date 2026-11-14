@@ -1,5 +1,13 @@
 [简体中文](README.md) | **English** | [繁體中文](README-ZH_TW.md)
 
+> **This is not an official release.** This repository is a personal fork of
+> [PCL Community Edition](https://github.com/PCL-Community/PCL-CE) carrying a few self-use changes.
+> The change list, build instructions and known limitations are maintained in the
+> **[Chinese README](README.md)** — please read it first. Report issues to
+> [this repository](https://github.com/Srythm/PCL-CE/issues), not to upstream.
+>
+> The sections below describe inherited upstream features and are kept as-is.
+
 <div align="center">
 
 <img src="Plain Craft Launcher 2/Images/icon.ico" alt="Logo" width="80" height="80">

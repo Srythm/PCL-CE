@@ -1,5 +1,12 @@
 [简体中文](README.md) | [English](README-EN.md) | **繁體中文**
 
+> **這不是官方版本。** 本儲存庫是 [PCL Community Edition](https://github.com/PCL-Community/PCL-CE)
+> 的個人分支，用於承載少數自用改動。改動清單、建置方式與已知限制以
+> **[簡體中文 README](README.md)** 為準，請先閱讀該檔案。問題請回報到
+> [本儲存庫](https://github.com/Srythm/PCL-CE/issues)，不要佔用上游支援管道。
+>
+> 以下章節描述的是沿用自上游的功能，維持原樣。
+
 <div align="center">
 
 <img src="Plain Craft Launcher 2/Images/icon.ico" alt="Logo" width="80" height="80">
