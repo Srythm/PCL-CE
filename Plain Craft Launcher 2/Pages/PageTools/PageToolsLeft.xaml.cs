@@ -21,15 +21,23 @@ public partial class PageToolsLeft : IPageView
     }
 
     /// <summary>
-    ///     未配置大厅服务器地址时隐藏联机入口。
+    ///     未配置大厅服务器地址时移除联机入口。
     ///     该地址由编译期注入的密钥提供，缺失时进入该页面只会报错，故不展示入口。
     /// </summary>
     private void ApplyLobbyAvailability()
     {
         if (PageToolsLeftViewModel.IsLobbyAvailable) return;
-        TextGameLinkCategory.Visibility = Visibility.Collapsed;
-        ItemGameLink.Visibility = Visibility.Collapsed;
+        // 初始子页面直接落到「百宝箱」：FormMain 会在切换时先读 pageID 再 PageGet，
+        // 若此处仍为默认值 1，联机页会被提前构造并触发公告请求。
+        pageID = FormMain.PageSubType.ToolsTest;
         ItemGameLink.IsEnabled = false;
+        // 仅设置 Visibility 会被后续的页面动画与控件内部逻辑覆盖，故直接从视觉树移除。
+        var hadCategory = PanItem.Children.Contains(TextGameLinkCategory);
+        var hadItem = PanItem.Children.Contains(ItemGameLink);
+        PanItem.Children.Remove(TextGameLinkCategory);
+        PanItem.Children.Remove(ItemGameLink);
+        Common.Log($"[Tools] 未配置大厅服务器，已移除联机入口（标题 {hadCategory}，条目 {hadItem}）",
+            Common.LogLevel.Normal);
     }
 
     private void PageLinkLeft_Loaded(object sender, RoutedEventArgs e)
@@ -116,7 +124,10 @@ public partial class PageToolsLeft : IPageView
     public object PageGet(FormMain.PageSubType? id = null)
     {
         var targetID = id ?? pageID;
-        switch (id)
+        // 联机大厅不可用时，任何指向该页面的请求都回落到「百宝箱」，避免构造必然报错的页面
+        if (!PageToolsLeftViewModel.IsLobbyAvailable && targetID == FormMain.PageSubType.ToolsGameLink)
+            targetID = FormMain.PageSubType.ToolsTest;
+        switch (targetID)
         {
             case FormMain.PageSubType.ToolsGameLink:
             {
@@ -142,6 +153,8 @@ public partial class PageToolsLeft : IPageView
     /// </summary>
     public void PageChange(FormMain.PageSubType id)
     {
+        if (!PageToolsLeftViewModel.IsLobbyAvailable && id == FormMain.PageSubType.ToolsGameLink)
+            id = FormMain.PageSubType.ToolsTest;
         if (pageID == id)
             return;
         Animations.AniBeginControl();
